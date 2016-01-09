@@ -1,0 +1,11 @@
+MO vga_sync NULL vga_sync.v vlg62/vga__sync.bin 1452216195
+MO GP NULL GP.v vlg33/_g_p.bin 1452216195
+MO clk_divider NULL clk_divider.v vlg70/clk__divider.bin 1452165273
+MO score NULL score.v vlg10/score.bin 1452216195
+MO debounce NULL debounce.v vlg1D/debounce.bin 1452216195
+MO TPs NULL tps.v vlg37/_t_ps.bin 1452191491
+MO TP NULL tp.v vlg74/_t_p.bin 1452216195
+MO msg NULL msg.v vlg4B/msg.bin 1452216195
+MO final NULL final.v vlg5A/final.bin 1452216195
+MO Rotation_direction NULL Rotation_direction.v vlg74/_rotation__direction.bin 1452216195
+MO video_pattern NULL video_pattern.v vlg3C/video__pattern.bin 1452159852

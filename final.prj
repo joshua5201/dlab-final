@@ -1,0 +1,8 @@
+verilog work "vga_sync.v"
+verilog work "tp.v"
+verilog work "score.v"
+verilog work "Rotation_direction.v"
+verilog work "msg.v"
+verilog work "GP.v"
+verilog work "debounce.v"
+verilog work "final.v"

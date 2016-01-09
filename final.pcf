@@ -1,0 +1,249 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Fri Jan 08 09:23:49 2016
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "VGA_RED" LOCATE = SITE "H14" LEVEL 1;
+COMP "VGA_BLUE" LOCATE = SITE "G15" LEVEL 1;
+COMP "VGA_GREEN" LOCATE = SITE "H15" LEVEL 1;
+COMP "clk" LOCATE = SITE "C9" LEVEL 1;
+COMP "HSYNC" LOCATE = SITE "F15" LEVEL 1;
+COMP "ROT_A" LOCATE = SITE "K18" LEVEL 1;
+COMP "ROT_B" LOCATE = SITE "G18" LEVEL 1;
+COMP "VSYNC" LOCATE = SITE "F14" LEVEL 1;
+COMP "reset" LOCATE = SITE "K17" LEVEL 1;
+COMP "led<0>" LOCATE = SITE "F12" LEVEL 1;
+COMP "led<1>" LOCATE = SITE "E12" LEVEL 1;
+COMP "led<2>" LOCATE = SITE "E11" LEVEL 1;
+COMP "led<3>" LOCATE = SITE "F11" LEVEL 1;
+COMP "led<4>" LOCATE = SITE "C11" LEVEL 1;
+COMP "led<5>" LOCATE = SITE "D11" LEVEL 1;
+COMP "led<6>" LOCATE = SITE "E9" LEVEL 1;
+COMP "led<7>" LOCATE = SITE "F9" LEVEL 1;
+COMP "button" LOCATE = SITE "V16" LEVEL 1;
+NET "clk_BUFGP/IBUFG" BEL "clk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+TIMEGRP clk = BEL "gp_x_0" BEL "gp_x_1" BEL "gp_x_2" BEL "gp_x_3" BEL "gp_x_4"
+        BEL "gp_x_5" BEL "gp_x_6" BEL "gp_x_7" BEL "gp_x_8" BEL "gp_x_9" BEL
+        "tp0_enabled" BEL "tp1_enabled" BEL "tp2_enabled" BEL "tp3_enabled"
+        BEL "tp4_enabled" BEL "tp5_enabled" BEL "tp6_enabled" BEL
+        "tp7_enabled" BEL "tp8_enabled" BEL "tp9_enabled" BEL "rgb_reg_0" BEL
+        "rgb_reg_1" BEL "rgb_reg_2" BEL "prev_btn_level" BEL "btn_db0/pressed"
+        BEL "btn_db0/debounced_btn_state" BEL "tp9/reach_bottom" BEL
+        "tp9/point" BEL "tp8/reach_bottom" BEL "tp8/point" BEL
+        "tp7/reach_bottom" BEL "tp7/point" BEL "tp6/reach_bottom" BEL
+        "tp6/point" BEL "tp5/reach_bottom" BEL "tp5/point" BEL
+        "tp4/reach_bottom" BEL "tp4/point" BEL "tp3/reach_bottom" BEL
+        "tp3/point" BEL "tp2/reach_bottom" BEL "tp2/point" BEL
+        "tp1/reach_bottom" BEL "tp1/point" BEL "tp0/reach_bottom" BEL
+        "tp0/point" BEL "btn_db0/counter_0" BEL "btn_db0/counter_1" BEL
+        "btn_db0/counter_2" BEL "btn_db0/counter_3" BEL "btn_db0/counter_4"
+        BEL "btn_db0/counter_5" BEL "btn_db0/counter_6" BEL
+        "btn_db0/counter_7" BEL "btn_db0/counter_8" BEL "btn_db0/counter_9"
+        BEL "btn_db0/counter_10" BEL "btn_db0/counter_11" BEL
+        "btn_db0/counter_12" BEL "btn_db0/counter_13" BEL "btn_db0/counter_14"
+        BEL "btn_db0/counter_15" BEL "btn_db0/counter_16" BEL
+        "btn_db0/counter_17" BEL "btn_db0/counter_18" BEL "btn_db0/counter_19"
+        BEL "btn_db0/counter_20" BEL "tp9/tick_count_0" BEL "tp9/tick_count_1"
+        BEL "tp9/tick_count_2" BEL "tp9/tick_count_3" BEL "tp9/tick_count_4"
+        BEL "tp9/tick_count_5" BEL "tp9/tick_count_6" BEL "tp9/tick_count_7"
+        BEL "tp9/tick_count_8" BEL "tp9/tick_count_9" BEL "tp9/tick_count_10"
+        BEL "tp9/tick_count_11" BEL "tp9/tick_count_12" BEL
+        "tp9/tick_count_13" BEL "tp9/tick_count_14" BEL "tp9/tick_count_15"
+        BEL "tp9/tick_count_16" BEL "tp9/tick_count_17" BEL
+        "tp9/tick_count_18" BEL "tp9/tick_count_19" BEL "tp9/position_y_0" BEL
+        "tp9/position_y_1" BEL "tp9/position_y_2" BEL "tp9/position_y_3" BEL
+        "tp9/position_y_4" BEL "tp9/position_y_5" BEL "tp9/position_y_6" BEL
+        "tp9/position_y_7" BEL "tp9/position_y_8" BEL "tp9/position_y_9" BEL
+        "tp9/clk_count_0" BEL "tp9/clk_count_1" BEL "tp9/clk_count_2" BEL
+        "tp9/clk_count_3" BEL "tp9/clk_count_4" BEL "tp9/clk_count_5" BEL
+        "tp9/clk_count_6" BEL "tp9/clk_count_7" BEL "tp9/clk_count_8" BEL
+        "tp9/clk_count_9" BEL "tp9/clk_count_10" BEL "tp9/clk_count_11" BEL
+        "tp9/clk_count_12" BEL "tp9/clk_count_13" BEL "tp9/clk_count_14" BEL
+        "tp9/clk_count_15" BEL "tp9/clk_count_16" BEL "tp9/clk_count_17" BEL
+        "tp9/clk_count_18" BEL "tp9/clk_count_19" BEL "tp8/tick_count_0" BEL
+        "tp8/tick_count_1" BEL "tp8/tick_count_2" BEL "tp8/tick_count_3" BEL
+        "tp8/tick_count_4" BEL "tp8/tick_count_5" BEL "tp8/tick_count_6" BEL
+        "tp8/tick_count_7" BEL "tp8/tick_count_8" BEL "tp8/tick_count_9" BEL
+        "tp8/tick_count_10" BEL "tp8/tick_count_11" BEL "tp8/tick_count_12"
+        BEL "tp8/tick_count_13" BEL "tp8/tick_count_14" BEL
+        "tp8/tick_count_15" BEL "tp8/tick_count_16" BEL "tp8/tick_count_17"
+        BEL "tp8/tick_count_18" BEL "tp8/tick_count_19" BEL "tp8/position_y_0"
+        BEL "tp8/position_y_1" BEL "tp8/position_y_2" BEL "tp8/position_y_3"
+        BEL "tp8/position_y_4" BEL "tp8/position_y_5" BEL "tp8/position_y_6"
+        BEL "tp8/position_y_7" BEL "tp8/position_y_8" BEL "tp8/position_y_9"
+        BEL "tp8/clk_count_0" BEL "tp8/clk_count_1" BEL "tp8/clk_count_2" BEL
+        "tp8/clk_count_3" BEL "tp8/clk_count_4" BEL "tp8/clk_count_5" BEL
+        "tp8/clk_count_6" BEL "tp8/clk_count_7" BEL "tp8/clk_count_8" BEL
+        "tp8/clk_count_9" BEL "tp8/clk_count_10" BEL "tp8/clk_count_11" BEL
+        "tp8/clk_count_12" BEL "tp8/clk_count_13" BEL "tp8/clk_count_14" BEL
+        "tp8/clk_count_15" BEL "tp8/clk_count_16" BEL "tp8/clk_count_17" BEL
+        "tp8/clk_count_18" BEL "tp8/clk_count_19" BEL "tp7/tick_count_0" BEL
+        "tp7/tick_count_1" BEL "tp7/tick_count_2" BEL "tp7/tick_count_3" BEL
+        "tp7/tick_count_4" BEL "tp7/tick_count_5" BEL "tp7/tick_count_6" BEL
+        "tp7/tick_count_7" BEL "tp7/tick_count_8" BEL "tp7/tick_count_9" BEL
+        "tp7/tick_count_10" BEL "tp7/tick_count_11" BEL "tp7/tick_count_12"
+        BEL "tp7/tick_count_13" BEL "tp7/tick_count_14" BEL
+        "tp7/tick_count_15" BEL "tp7/tick_count_16" BEL "tp7/tick_count_17"
+        BEL "tp7/tick_count_18" BEL "tp7/tick_count_19" BEL "tp7/position_y_0"
+        BEL "tp7/position_y_1" BEL "tp7/position_y_2" BEL "tp7/position_y_3"
+        BEL "tp7/position_y_4" BEL "tp7/position_y_5" BEL "tp7/position_y_6"
+        BEL "tp7/position_y_7" BEL "tp7/position_y_8" BEL "tp7/position_y_9"
+        BEL "tp7/clk_count_0" BEL "tp7/clk_count_1" BEL "tp7/clk_count_2" BEL
+        "tp7/clk_count_3" BEL "tp7/clk_count_4" BEL "tp7/clk_count_5" BEL
+        "tp7/clk_count_6" BEL "tp7/clk_count_7" BEL "tp7/clk_count_8" BEL
+        "tp7/clk_count_9" BEL "tp7/clk_count_10" BEL "tp7/clk_count_11" BEL
+        "tp7/clk_count_12" BEL "tp7/clk_count_13" BEL "tp7/clk_count_14" BEL
+        "tp7/clk_count_15" BEL "tp7/clk_count_16" BEL "tp7/clk_count_17" BEL
+        "tp7/clk_count_18" BEL "tp7/clk_count_19" BEL "tp6/clk_count_0" BEL
+        "tp6/clk_count_1" BEL "tp6/clk_count_2" BEL "tp6/clk_count_3" BEL
+        "tp6/clk_count_4" BEL "tp6/clk_count_5" BEL "tp6/clk_count_6" BEL
+        "tp6/clk_count_7" BEL "tp6/clk_count_8" BEL "tp6/clk_count_9" BEL
+        "tp6/clk_count_10" BEL "tp6/clk_count_11" BEL "tp6/clk_count_12" BEL
+        "tp6/clk_count_13" BEL "tp6/clk_count_14" BEL "tp6/clk_count_15" BEL
+        "tp6/clk_count_16" BEL "tp6/clk_count_17" BEL "tp6/clk_count_18" BEL
+        "tp6/clk_count_19" BEL "tp6/tick_count_0" BEL "tp6/tick_count_1" BEL
+        "tp6/tick_count_2" BEL "tp6/tick_count_3" BEL "tp6/tick_count_4" BEL
+        "tp6/tick_count_5" BEL "tp6/tick_count_6" BEL "tp6/tick_count_7" BEL
+        "tp6/tick_count_8" BEL "tp6/tick_count_9" BEL "tp6/tick_count_10" BEL
+        "tp6/tick_count_11" BEL "tp6/tick_count_12" BEL "tp6/tick_count_13"
+        BEL "tp6/tick_count_14" BEL "tp6/tick_count_15" BEL
+        "tp6/tick_count_16" BEL "tp6/tick_count_17" BEL "tp6/tick_count_18"
+        BEL "tp6/tick_count_19" BEL "tp6/position_y_0" BEL "tp6/position_y_1"
+        BEL "tp6/position_y_2" BEL "tp6/position_y_3" BEL "tp6/position_y_4"
+        BEL "tp6/position_y_5" BEL "tp6/position_y_6" BEL "tp6/position_y_7"
+        BEL "tp6/position_y_8" BEL "tp6/position_y_9" BEL "tp5/clk_count_0"
+        BEL "tp5/clk_count_1" BEL "tp5/clk_count_2" BEL "tp5/clk_count_3" BEL
+        "tp5/clk_count_4" BEL "tp5/clk_count_5" BEL "tp5/clk_count_6" BEL
+        "tp5/clk_count_7" BEL "tp5/clk_count_8" BEL "tp5/clk_count_9" BEL
+        "tp5/clk_count_10" BEL "tp5/clk_count_11" BEL "tp5/clk_count_12" BEL
+        "tp5/clk_count_13" BEL "tp5/clk_count_14" BEL "tp5/clk_count_15" BEL
+        "tp5/clk_count_16" BEL "tp5/clk_count_17" BEL "tp5/clk_count_18" BEL
+        "tp5/clk_count_19" BEL "tp5/tick_count_0" BEL "tp5/tick_count_1" BEL
+        "tp5/tick_count_2" BEL "tp5/tick_count_3" BEL "tp5/tick_count_4" BEL
+        "tp5/tick_count_5" BEL "tp5/tick_count_6" BEL "tp5/tick_count_7" BEL
+        "tp5/tick_count_8" BEL "tp5/tick_count_9" BEL "tp5/tick_count_10" BEL
+        "tp5/tick_count_11" BEL "tp5/tick_count_12" BEL "tp5/tick_count_13"
+        BEL "tp5/tick_count_14" BEL "tp5/tick_count_15" BEL
+        "tp5/tick_count_16" BEL "tp5/tick_count_17" BEL "tp5/tick_count_18"
+        BEL "tp5/tick_count_19" BEL "tp5/position_y_0" BEL "tp5/position_y_1"
+        BEL "tp5/position_y_2" BEL "tp5/position_y_3" BEL "tp5/position_y_4"
+        BEL "tp5/position_y_5" BEL "tp5/position_y_6" BEL "tp5/position_y_7"
+        BEL "tp5/position_y_8" BEL "tp5/position_y_9" BEL "tp4/tick_count_0"
+        BEL "tp4/tick_count_1" BEL "tp4/tick_count_2" BEL "tp4/tick_count_3"
+        BEL "tp4/tick_count_4" BEL "tp4/tick_count_5" BEL "tp4/tick_count_6"
+        BEL "tp4/tick_count_7" BEL "tp4/tick_count_8" BEL "tp4/tick_count_9"
+        BEL "tp4/tick_count_10" BEL "tp4/tick_count_11" BEL
+        "tp4/tick_count_12" BEL "tp4/tick_count_13" BEL "tp4/tick_count_14"
+        BEL "tp4/tick_count_15" BEL "tp4/tick_count_16" BEL
+        "tp4/tick_count_17" BEL "tp4/tick_count_18" BEL "tp4/tick_count_19"
+        BEL "tp4/position_y_0" BEL "tp4/position_y_1" BEL "tp4/position_y_2"
+        BEL "tp4/position_y_3" BEL "tp4/position_y_4" BEL "tp4/position_y_5"
+        BEL "tp4/position_y_6" BEL "tp4/position_y_7" BEL "tp4/position_y_8"
+        BEL "tp4/position_y_9" BEL "tp4/clk_count_0" BEL "tp4/clk_count_1" BEL
+        "tp4/clk_count_2" BEL "tp4/clk_count_3" BEL "tp4/clk_count_4" BEL
+        "tp4/clk_count_5" BEL "tp4/clk_count_6" BEL "tp4/clk_count_7" BEL
+        "tp4/clk_count_8" BEL "tp4/clk_count_9" BEL "tp4/clk_count_10" BEL
+        "tp4/clk_count_11" BEL "tp4/clk_count_12" BEL "tp4/clk_count_13" BEL
+        "tp4/clk_count_14" BEL "tp4/clk_count_15" BEL "tp4/clk_count_16" BEL
+        "tp4/clk_count_17" BEL "tp4/clk_count_18" BEL "tp4/clk_count_19" BEL
+        "tp3/tick_count_0" BEL "tp3/tick_count_1" BEL "tp3/tick_count_2" BEL
+        "tp3/tick_count_3" BEL "tp3/tick_count_4" BEL "tp3/tick_count_5" BEL
+        "tp3/tick_count_6" BEL "tp3/tick_count_7" BEL "tp3/tick_count_8" BEL
+        "tp3/tick_count_9" BEL "tp3/tick_count_10" BEL "tp3/tick_count_11" BEL
+        "tp3/tick_count_12" BEL "tp3/tick_count_13" BEL "tp3/tick_count_14"
+        BEL "tp3/tick_count_15" BEL "tp3/tick_count_16" BEL
+        "tp3/tick_count_17" BEL "tp3/tick_count_18" BEL "tp3/tick_count_19"
+        BEL "tp3/position_y_0" BEL "tp3/position_y_1" BEL "tp3/position_y_2"
+        BEL "tp3/position_y_3" BEL "tp3/position_y_4" BEL "tp3/position_y_5"
+        BEL "tp3/position_y_6" BEL "tp3/position_y_7" BEL "tp3/position_y_8"
+        BEL "tp3/position_y_9" BEL "tp3/clk_count_0" BEL "tp3/clk_count_1" BEL
+        "tp3/clk_count_2" BEL "tp3/clk_count_3" BEL "tp3/clk_count_4" BEL
+        "tp3/clk_count_5" BEL "tp3/clk_count_6" BEL "tp3/clk_count_7" BEL
+        "tp3/clk_count_8" BEL "tp3/clk_count_9" BEL "tp3/clk_count_10" BEL
+        "tp3/clk_count_11" BEL "tp3/clk_count_12" BEL "tp3/clk_count_13" BEL
+        "tp3/clk_count_14" BEL "tp3/clk_count_15" BEL "tp3/clk_count_16" BEL
+        "tp3/clk_count_17" BEL "tp3/clk_count_18" BEL "tp3/clk_count_19" BEL
+        "tp2/tick_count_0" BEL "tp2/tick_count_1" BEL "tp2/tick_count_2" BEL
+        "tp2/tick_count_3" BEL "tp2/tick_count_4" BEL "tp2/tick_count_5" BEL
+        "tp2/tick_count_6" BEL "tp2/tick_count_7" BEL "tp2/tick_count_8" BEL
+        "tp2/tick_count_9" BEL "tp2/tick_count_10" BEL "tp2/tick_count_11" BEL
+        "tp2/tick_count_12" BEL "tp2/tick_count_13" BEL "tp2/tick_count_14"
+        BEL "tp2/tick_count_15" BEL "tp2/tick_count_16" BEL
+        "tp2/tick_count_17" BEL "tp2/tick_count_18" BEL "tp2/tick_count_19"
+        BEL "tp2/position_y_0" BEL "tp2/position_y_1" BEL "tp2/position_y_2"
+        BEL "tp2/position_y_3" BEL "tp2/position_y_4" BEL "tp2/position_y_5"
+        BEL "tp2/position_y_6" BEL "tp2/position_y_7" BEL "tp2/position_y_8"
+        BEL "tp2/position_y_9" BEL "tp2/clk_count_0" BEL "tp2/clk_count_1" BEL
+        "tp2/clk_count_2" BEL "tp2/clk_count_3" BEL "tp2/clk_count_4" BEL
+        "tp2/clk_count_5" BEL "tp2/clk_count_6" BEL "tp2/clk_count_7" BEL
+        "tp2/clk_count_8" BEL "tp2/clk_count_9" BEL "tp2/clk_count_10" BEL
+        "tp2/clk_count_11" BEL "tp2/clk_count_12" BEL "tp2/clk_count_13" BEL
+        "tp2/clk_count_14" BEL "tp2/clk_count_15" BEL "tp2/clk_count_16" BEL
+        "tp2/clk_count_17" BEL "tp2/clk_count_18" BEL "tp2/clk_count_19" BEL
+        "tp1/tick_count_0" BEL "tp1/tick_count_1" BEL "tp1/tick_count_2" BEL
+        "tp1/tick_count_3" BEL "tp1/tick_count_4" BEL "tp1/tick_count_5" BEL
+        "tp1/tick_count_6" BEL "tp1/tick_count_7" BEL "tp1/tick_count_8" BEL
+        "tp1/tick_count_9" BEL "tp1/tick_count_10" BEL "tp1/tick_count_11" BEL
+        "tp1/tick_count_12" BEL "tp1/tick_count_13" BEL "tp1/tick_count_14"
+        BEL "tp1/tick_count_15" BEL "tp1/tick_count_16" BEL
+        "tp1/tick_count_17" BEL "tp1/tick_count_18" BEL "tp1/tick_count_19"
+        BEL "tp1/position_y_0" BEL "tp1/position_y_1" BEL "tp1/position_y_2"
+        BEL "tp1/position_y_3" BEL "tp1/position_y_4" BEL "tp1/position_y_5"
+        BEL "tp1/position_y_6" BEL "tp1/position_y_7" BEL "tp1/position_y_8"
+        BEL "tp1/position_y_9" BEL "tp1/clk_count_0" BEL "tp1/clk_count_1" BEL
+        "tp1/clk_count_2" BEL "tp1/clk_count_3" BEL "tp1/clk_count_4" BEL
+        "tp1/clk_count_5" BEL "tp1/clk_count_6" BEL "tp1/clk_count_7" BEL
+        "tp1/clk_count_8" BEL "tp1/clk_count_9" BEL "tp1/clk_count_10" BEL
+        "tp1/clk_count_11" BEL "tp1/clk_count_12" BEL "tp1/clk_count_13" BEL
+        "tp1/clk_count_14" BEL "tp1/clk_count_15" BEL "tp1/clk_count_16" BEL
+        "tp1/clk_count_17" BEL "tp1/clk_count_18" BEL "tp1/clk_count_19" BEL
+        "tp0/tick_count_0" BEL "tp0/tick_count_1" BEL "tp0/tick_count_2" BEL
+        "tp0/tick_count_3" BEL "tp0/tick_count_4" BEL "tp0/tick_count_5" BEL
+        "tp0/tick_count_6" BEL "tp0/tick_count_7" BEL "tp0/tick_count_8" BEL
+        "tp0/tick_count_9" BEL "tp0/tick_count_10" BEL "tp0/tick_count_11" BEL
+        "tp0/tick_count_12" BEL "tp0/tick_count_13" BEL "tp0/tick_count_14"
+        BEL "tp0/tick_count_15" BEL "tp0/tick_count_16" BEL
+        "tp0/tick_count_17" BEL "tp0/tick_count_18" BEL "tp0/tick_count_19"
+        BEL "tp0/position_y_0" BEL "tp0/position_y_1" BEL "tp0/position_y_2"
+        BEL "tp0/position_y_3" BEL "tp0/position_y_4" BEL "tp0/position_y_5"
+        BEL "tp0/position_y_6" BEL "tp0/position_y_7" BEL "tp0/position_y_8"
+        BEL "tp0/position_y_9" BEL "tp0/clk_count_0" BEL "tp0/clk_count_1" BEL
+        "tp0/clk_count_2" BEL "tp0/clk_count_3" BEL "tp0/clk_count_4" BEL
+        "tp0/clk_count_5" BEL "tp0/clk_count_6" BEL "tp0/clk_count_7" BEL
+        "tp0/clk_count_8" BEL "tp0/clk_count_9" BEL "tp0/clk_count_10" BEL
+        "tp0/clk_count_11" BEL "tp0/clk_count_12" BEL "tp0/clk_count_13" BEL
+        "tp0/clk_count_14" BEL "tp0/clk_count_15" BEL "tp0/clk_count_16" BEL
+        "tp0/clk_count_17" BEL "tp0/clk_count_18" BEL "tp0/clk_count_19" BEL
+        "rotate/rotary_right" BEL "rotate/delay_rotary_q1" BEL
+        "rotate/rotary_q2" BEL "rotate/rotary_q1" BEL "rotate/rotary_event"
+        BEL "rotate/ROT_B_TEMP" BEL "rotate/ROT_A_TEMP" BEL "vs0/h_sync_reg"
+        BEL "vs0/v_sync_reg" BEL "vs0/h_count_reg_9" BEL "vs0/h_count_reg_8"
+        BEL "vs0/h_count_reg_7" BEL "vs0/h_count_reg_6" BEL
+        "vs0/h_count_reg_5" BEL "vs0/h_count_reg_4" BEL "vs0/h_count_reg_3"
+        BEL "vs0/h_count_reg_2" BEL "vs0/h_count_reg_1" BEL
+        "vs0/h_count_reg_0" BEL "vs0/v_count_reg_9" BEL "vs0/v_count_reg_8"
+        BEL "vs0/v_count_reg_7" BEL "vs0/v_count_reg_6" BEL
+        "vs0/v_count_reg_5" BEL "vs0/v_count_reg_4" BEL "vs0/v_count_reg_3"
+        BEL "vs0/v_count_reg_2" BEL "vs0/v_count_reg_1" BEL
+        "vs0/v_count_reg_0" BEL "vs0/mod2_reg" BEL "gp0/clk_count_31" BEL
+        "gp0/clk_count_30" BEL "gp0/clk_count_29" BEL "gp0/clk_count_28" BEL
+        "gp0/clk_count_27" BEL "gp0/clk_count_26" BEL "gp0/clk_count_25" BEL
+        "gp0/clk_count_24" BEL "gp0/clk_count_23" BEL "gp0/clk_count_22" BEL
+        "gp0/clk_count_21" BEL "gp0/clk_count_20" BEL "gp0/clk_count_19" BEL
+        "gp0/clk_count_18" BEL "gp0/clk_count_17" BEL "gp0/clk_count_16" BEL
+        "gp0/clk_count_15" BEL "gp0/clk_count_14" BEL "gp0/clk_count_13" BEL
+        "gp0/clk_count_12" BEL "gp0/clk_count_11" BEL "gp0/clk_count_10" BEL
+        "gp0/clk_count_9" BEL "gp0/clk_count_8" BEL "gp0/clk_count_7" BEL
+        "gp0/clk_count_6" BEL "gp0/clk_count_5" BEL "gp0/clk_count_4" BEL
+        "gp0/clk_count_3" BEL "gp0/clk_count_2" BEL "gp0/clk_count_1" BEL
+        "gp0/clk_count_0" BEL "gp0/open" BEL "S_FSM_FFd1" BEL "S_FSM_FFd2" BEL
+        "gp_x_1_1" BEL "gp_x_0_1" BEL "vs0/v_count_reg_1_1" BEL
+        "vs0/v_count_reg_0_1" BEL "gp_x_2_1" BEL "vs0/v_count_reg_7_1" BEL
+        "vs0/v_count_reg_8_1" BEL "vs0/h_count_reg_0_1" BEL
+        "vs0/h_count_reg_2_1" BEL "vs0/h_count_reg_3_1" BEL
+        "vs0/h_count_reg_1_1" BEL "gp_x_3_1" BEL "vs0/v_count_reg_6_1" BEL
+        "vs0/v_count_reg_2_1" BEL "clk_BUFGP/BUFG.GCLKMUX" BEL
+        "clk_BUFGP/BUFG";
+TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH 40%;
+SCHEMATIC END;
+

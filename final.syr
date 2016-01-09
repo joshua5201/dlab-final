@@ -1,0 +1,839 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: final.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "final.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "final"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : final
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "vga_sync.v" in library work
+Compiling verilog file "tp.v" in library work
+Module <vga_sync> compiled
+Compiling verilog file "score.v" in library work
+Module <TP> compiled
+Compiling verilog file "Rotation_direction.v" in library work
+Module <score> compiled
+Compiling verilog file "msg.v" in library work
+Module <Rotation_direction> compiled
+Compiling verilog file "GP.v" in library work
+Module <msg> compiled
+Compiling verilog file "debounce.v" in library work
+Module <GP> compiled
+Compiling verilog file "final.v" in library work
+Module <debounce> compiled
+Module <final> compiled
+No errors in compilation
+Analysis of file <"final.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <final> in library <work> with parameters.
+	GAME = "01"
+	INIT = "00"
+	WAIT = "10"
+
+Analyzing hierarchy for module <Rotation_direction> in library <work>.
+
+Analyzing hierarchy for module <debounce> in library <work> with parameters.
+	DEBOUNCE_PERIOD = "00000000000011110100001001000000"
+
+Analyzing hierarchy for module <vga_sync> in library <work> with parameters.
+	HB = "00000000000000000000000000010000"
+	HD = "00000000000000000000001010000000"
+	HF = "00000000000000000000000000110000"
+	HR = "00000000000000000000000001100000"
+	VB = "00000000000000000000000000100001"
+	VD = "00000000000000000000000111100000"
+	VF = "00000000000000000000000000001010"
+	VR = "00000000000000000000000000000010"
+
+Analyzing hierarchy for module <GP> in library <work> with parameters.
+	GAME = "01"
+	INIT = "00"
+	WAIT = "10"
+
+Analyzing hierarchy for module <TP> in library <work>.
+
+Analyzing hierarchy for module <score> in library <work> with parameters.
+	GAME = "01"
+	INIT = "00"
+	WAIT = "10"
+
+Analyzing hierarchy for module <msg> in library <work> with parameters.
+	GAME = "01"
+	INIT = "00"
+	WAIT = "10"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <final>.
+	GAME = 2'b01
+	INIT = 2'b00
+	WAIT = 2'b10
+Module <final> is correct for synthesis.
+ 
+Analyzing module <Rotation_direction> in library <work>.
+Module <Rotation_direction> is correct for synthesis.
+ 
+Analyzing module <debounce> in library <work>.
+	DEBOUNCE_PERIOD = 32'sb00000000000011110100001001000000
+Module <debounce> is correct for synthesis.
+ 
+Analyzing module <vga_sync> in library <work>.
+	HB = 32'sb00000000000000000000000000010000
+	HD = 32'sb00000000000000000000001010000000
+	HF = 32'sb00000000000000000000000000110000
+	HR = 32'sb00000000000000000000000001100000
+	VB = 32'sb00000000000000000000000000100001
+	VD = 32'sb00000000000000000000000111100000
+	VF = 32'sb00000000000000000000000000001010
+	VR = 32'sb00000000000000000000000000000010
+Module <vga_sync> is correct for synthesis.
+ 
+Analyzing module <GP> in library <work>.
+	GAME = 2'b01
+	INIT = 2'b00
+	WAIT = 2'b10
+Module <GP> is correct for synthesis.
+ 
+Analyzing module <TP> in library <work>.
+Module <TP> is correct for synthesis.
+ 
+Analyzing module <score> in library <work>.
+	GAME = 2'b01
+	INIT = 2'b00
+	WAIT = 2'b10
+Module <score> is correct for synthesis.
+ 
+Analyzing module <msg> in library <work>.
+	GAME = 2'b01
+	INIT = 2'b00
+	WAIT = 2'b10
+Module <msg> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <Rotation_direction>.
+    Related source file is "Rotation_direction.v".
+    Found 1-bit register for signal <rotary_right>.
+    Found 1-bit register for signal <rotary_event>.
+    Found 1-bit register for signal <delay_rotary_q1>.
+    Found 1-bit register for signal <ROT_A_TEMP>.
+    Found 1-bit register for signal <ROT_B_TEMP>.
+    Found 1-bit register for signal <rotary_q1>.
+    Found 1-bit 4-to-1 multiplexer for signal <rotary_q1$mux0000> created at line 41.
+    Found 1-bit register for signal <rotary_q2>.
+    Found 1-bit 4-to-1 multiplexer for signal <rotary_q2$mux0000> created at line 41.
+    Summary:
+	inferred   7 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <Rotation_direction> synthesized.
+
+
+Synthesizing Unit <debounce>.
+    Related source file is "debounce.v".
+    Found 21-bit up counter for signal <counter>.
+    Found 1-bit register for signal <debounced_btn_state>.
+    Found 1-bit register for signal <pressed>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   2 D-type flip-flop(s).
+Unit <debounce> synthesized.
+
+
+Synthesizing Unit <vga_sync>.
+    Related source file is "vga_sync.v".
+    Found 10-bit adder for signal <h_count_next$addsub0000> created at line 87.
+    Found 10-bit register for signal <h_count_reg>.
+    Found 10-bit comparator greatequal for signal <h_sync_next$cmp_ge0000> created at line 105.
+    Found 10-bit comparator lessequal for signal <h_sync_next$cmp_le0000> created at line 105.
+    Found 1-bit register for signal <h_sync_reg>.
+    Found 1-bit register for signal <mod2_reg>.
+    Found 10-bit adder for signal <v_count_next$addsub0000> created at line 98.
+    Found 10-bit register for signal <v_count_reg>.
+    Found 10-bit comparator greatequal for signal <v_sync_next$cmp_ge0000> created at line 108.
+    Found 10-bit comparator lessequal for signal <v_sync_next$cmp_le0000> created at line 108.
+    Found 1-bit register for signal <v_sync_reg>.
+    Found 11-bit comparator less for signal <visible$cmp_lt0000> created at line 112.
+    Found 10-bit comparator less for signal <visible$cmp_lt0001> created at line 112.
+    Summary:
+	inferred  23 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   6 Comparator(s).
+Unit <vga_sync> synthesized.
+
+
+Synthesizing Unit <GP>.
+    Related source file is "GP.v".
+    Found 32x32-bit ROM for signal <gp_col$mux0000>.
+    Found 32x32-bit ROM for signal <gp_col$mux0001>.
+    Found 12-bit subtractor for signal <$sub0000> created at line 51.
+    Found 32-bit up counter for signal <clk_count>.
+    Found 32-bit comparator greater for signal <clk_count$cmp_gt0000> created at line 38.
+    Found 32-bit 4-to-1 multiplexer for signal <gp_col>.
+    Found 1-bit register for signal <open>.
+    Found 32-bit comparator lessequal for signal <open$cmp_le0000> created at line 38.
+    Found 32-bit comparator less for signal <open$cmp_lt0000> created at line 34.
+    Found 12-bit comparator greatequal for signal <rgb$cmp_ge0000> created at line 51.
+    Found 10-bit comparator greater for signal <rgb$cmp_gt0000> created at line 51.
+    Found 12-bit comparator less for signal <rgb$cmp_lt0000> created at line 51.
+    Summary:
+	inferred   2 ROM(s).
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred   6 Comparator(s).
+	inferred  32 Multiplexer(s).
+Unit <GP> synthesized.
+
+
+Synthesizing Unit <TP>.
+    Related source file is "tp.v".
+    Found 32x40-bit ROM for signal <$rom0000>.
+    Found 4-bit register for signal <point>.
+    Found 4-bit register for signal <reach_bottom>.
+    Found 30-bit adder for signal <$add0000> created at line 117.
+    Found 10x8-bit multiplier for signal <$mult0000> created at line 124.
+    Found 12-bit subtractor for signal <$sub0000> created at line 45.
+    Found 12-bit subtractor for signal <$sub0001> created at line 45.
+    Found 12-bit subtractor for signal <$sub0002> created at line 132.
+    Found 12-bit subtractor for signal <$sub0003> created at line 135.
+    Found 11-bit subtractor for signal <add0000$addsub0000> created at line 117.
+    Found 11x18-bit multiplier for signal <add0000$mult0000> created at line 117.
+    Found 20-bit up counter for signal <clk_count>.
+    Found 31-bit comparator greater for signal <clk_count$cmp_gt0000> created at line 117.
+    Found 12-bit comparator greater for signal <point$cmp_gt0000> created at line 135.
+    Found 12-bit comparator greater for signal <point$cmp_gt0001> created at line 132.
+    Found 10-bit comparator lessequal for signal <point$cmp_le0000> created at line 135.
+    Found 10-bit comparator lessequal for signal <point$cmp_le0001> created at line 132.
+    Found 10-bit comparator less for signal <point$cmp_lt0000> created at line 131.
+    Found 10-bit up counter for signal <position_y>.
+    Found 20-bit comparator lessequal for signal <position_y$cmp_le0000> created at line 124.
+    Found 31-bit comparator lessequal for signal <position_y$cmp_le0001> created at line 117.
+    Found 10-bit comparator greatequal for signal <reach_bottom$cmp_ge0000> created at line 140.
+    Found 12-bit comparator greatequal for signal <rgb$cmp_ge0000> created at line 45.
+    Found 12-bit comparator greatequal for signal <rgb$cmp_ge0001> created at line 45.
+    Found 12-bit comparator less for signal <rgb$cmp_lt0000> created at line 45.
+    Found 12-bit comparator less for signal <rgb$cmp_lt0001> created at line 45.
+    Found 20-bit up counter for signal <tick_count>.
+    Found 20-bit comparator greatequal for signal <tick_count$cmp_ge0000> created at line 119.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   3 Counter(s).
+	inferred   8 D-type flip-flop(s).
+	inferred   8 Adder/Subtractor(s).
+	inferred   2 Multiplier(s).
+	inferred  14 Comparator(s).
+Unit <TP> synthesized.
+
+
+Synthesizing Unit <score>.
+    Related source file is "score.v".
+WARNING:Xst:647 - Input <state> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <score> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 10-bit comparator greater for signal <rgb$cmp_gt0000> created at line 26.
+    Found 10-bit comparator greater for signal <rgb$cmp_gt0001> created at line 26.
+    Found 10-bit comparator less for signal <rgb$cmp_lt0000> created at line 26.
+    Found 10-bit comparator less for signal <rgb$cmp_lt0001> created at line 26.
+    Summary:
+	inferred   4 Comparator(s).
+Unit <score> synthesized.
+
+
+Synthesizing Unit <msg>.
+    Related source file is "msg.v".
+    Found 10-bit comparator greater for signal <rgb$cmp_gt0000> created at line 25.
+    Found 10-bit comparator greater for signal <rgb$cmp_gt0001> created at line 25.
+    Found 10-bit comparator less for signal <rgb$cmp_lt0000> created at line 25.
+    Found 10-bit comparator less for signal <rgb$cmp_lt0001> created at line 25.
+    Summary:
+	inferred   4 Comparator(s).
+Unit <msg> synthesized.
+
+
+Synthesizing Unit <final>.
+    Related source file is "final.v".
+WARNING:Xst:1780 - Signal <current_rgb> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_0> for signal <S>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 5                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | reset                     (positive)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 10-bit register for signal <gp_x>.
+    Found 10-bit adder carry out for signal <gp_x$addsub0001> created at line 407.
+    Found 11-bit comparator greatequal for signal <gp_x$cmp_ge0000> created at line 407.
+    Found 10-bit comparator lessequal for signal <gp_x$cmp_le0000> created at line 415.
+    Found 10-bit addsub for signal <gp_x$share0000>.
+    Found 1-bit register for signal <prev_btn_level>.
+    Found 3-bit adder for signal <rgb_next$addsub0000> created at line 431.
+    Found 3-bit adder for signal <rgb_next$addsub0001> created at line 431.
+    Found 3-bit adder for signal <rgb_next$addsub0002> created at line 431.
+    Found 3-bit adder for signal <rgb_next$addsub0003> created at line 431.
+    Found 3-bit adder for signal <rgb_next$addsub0004> created at line 431.
+    Found 3-bit adder for signal <rgb_next$addsub0005> created at line 431.
+    Found 3-bit adder for signal <rgb_next$addsub0006> created at line 431.
+    Found 3-bit adder for signal <rgb_next$addsub0007> created at line 431.
+    Found 3-bit adder for signal <rgb_next$addsub0008> created at line 431.
+    Found 3-bit adder for signal <rgb_next$addsub0009> created at line 431.
+    Found 3-bit adder for signal <rgb_next$addsub0010> created at line 431.
+    Found 3-bit adder for signal <rgb_next$addsub0011> created at line 431.
+    Found 3-bit register for signal <rgb_reg>.
+    Found 4-bit adder for signal <score_reg>.
+    Found 4-bit adder for signal <score_reg$addsub0000> created at line 336.
+    Found 4-bit adder for signal <score_reg$addsub0001> created at line 336.
+    Found 4-bit adder for signal <score_reg$addsub0002> created at line 336.
+    Found 4-bit adder for signal <score_reg$addsub0003> created at line 336.
+    Found 4-bit adder for signal <score_reg$addsub0004> created at line 336.
+    Found 4-bit adder for signal <score_reg$addsub0005> created at line 336.
+    Found 4-bit adder for signal <score_reg$addsub0006> created at line 336.
+    Found 4-bit adder for signal <score_reg$addsub0007> created at line 336.
+    Found 1-bit register for signal <tp0_enabled>.
+    Found 1-bit register for signal <tp1_enabled>.
+    Found 1-bit register for signal <tp2_enabled>.
+    Found 1-bit register for signal <tp3_enabled>.
+    Found 1-bit register for signal <tp4_enabled>.
+    Found 1-bit register for signal <tp5_enabled>.
+    Found 1-bit register for signal <tp6_enabled>.
+    Found 1-bit register for signal <tp7_enabled>.
+    Found 1-bit register for signal <tp8_enabled>.
+    Found 1-bit register for signal <tp9_enabled>.
+    Found 4-bit adder for signal <tp_count>.
+    Found 4-bit adder for signal <tp_count$addsub0000> created at line 338.
+    Found 4-bit adder for signal <tp_count$addsub0001> created at line 338.
+    Found 4-bit adder for signal <tp_count$addsub0002> created at line 338.
+    Found 4-bit adder for signal <tp_count$addsub0003> created at line 338.
+    Found 4-bit adder for signal <tp_count$addsub0004> created at line 338.
+    Found 4-bit adder for signal <tp_count$addsub0005> created at line 338.
+    Found 4-bit adder for signal <tp_count$addsub0006> created at line 338.
+    Found 4-bit adder for signal <tp_count$addsub0007> created at line 338.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  24 D-type flip-flop(s).
+	inferred  32 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+Unit <final> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 12
+ 32x32-bit ROM                                         : 2
+ 32x40-bit ROM                                         : 10
+# Multipliers                                          : 20
+ 10x8-bit multiplier                                   : 10
+ 11x18-bit multiplier                                  : 10
+# Adders/Subtractors                                   : 117
+ 10-bit adder                                          : 2
+ 10-bit adder carry out                                : 1
+ 10-bit addsub                                         : 1
+ 10-bit subtractor                                     : 21
+ 11-bit subtractor                                     : 11
+ 12-bit subtractor                                     : 41
+ 3-bit adder                                           : 12
+ 30-bit adder                                          : 10
+ 4-bit adder                                           : 18
+# Counters                                             : 32
+ 10-bit up counter                                     : 10
+ 20-bit up counter                                     : 20
+ 21-bit up counter                                     : 1
+ 32-bit up counter                                     : 1
+# Registers                                            : 48
+ 1-bit register                                        : 24
+ 10-bit register                                       : 3
+ 3-bit register                                        : 1
+ 4-bit register                                        : 20
+# Comparators                                          : 162
+ 10-bit comparator greatequal                          : 12
+ 10-bit comparator greater                             : 5
+ 10-bit comparator less                                : 15
+ 10-bit comparator lessequal                           : 23
+ 11-bit comparator greatequal                          : 1
+ 11-bit comparator less                                : 1
+ 12-bit comparator greatequal                          : 21
+ 12-bit comparator greater                             : 20
+ 12-bit comparator less                                : 21
+ 20-bit comparator greatequal                          : 10
+ 20-bit comparator lessequal                           : 10
+ 31-bit comparator greater                             : 10
+ 31-bit comparator lessequal                           : 10
+ 32-bit comparator greater                             : 1
+ 32-bit comparator less                                : 1
+ 32-bit comparator lessequal                           : 1
+# Multiplexers                                         : 3
+ 1-bit 4-to-1 multiplexer                              : 2
+ 32-bit 4-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <S/FSM> on signal <S[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 11
+-------------------
+INFO:Xst:2261 - The FF/Latch <reach_bottom_1> in Unit <tp0> is equivalent to the following 2 FFs/Latches, which will be removed : <reach_bottom_2> <reach_bottom_3> 
+INFO:Xst:2261 - The FF/Latch <point_1> in Unit <tp0> is equivalent to the following 2 FFs/Latches, which will be removed : <point_2> <point_3> 
+INFO:Xst:2261 - The FF/Latch <reach_bottom_1> in Unit <tp1> is equivalent to the following 2 FFs/Latches, which will be removed : <reach_bottom_2> <reach_bottom_3> 
+INFO:Xst:2261 - The FF/Latch <point_1> in Unit <tp1> is equivalent to the following 2 FFs/Latches, which will be removed : <point_2> <point_3> 
+INFO:Xst:2261 - The FF/Latch <reach_bottom_1> in Unit <tp2> is equivalent to the following 2 FFs/Latches, which will be removed : <reach_bottom_2> <reach_bottom_3> 
+INFO:Xst:2261 - The FF/Latch <point_1> in Unit <tp2> is equivalent to the following 2 FFs/Latches, which will be removed : <point_2> <point_3> 
+INFO:Xst:2261 - The FF/Latch <reach_bottom_1> in Unit <tp3> is equivalent to the following 2 FFs/Latches, which will be removed : <reach_bottom_2> <reach_bottom_3> 
+INFO:Xst:2261 - The FF/Latch <point_1> in Unit <tp3> is equivalent to the following 2 FFs/Latches, which will be removed : <point_2> <point_3> 
+INFO:Xst:2261 - The FF/Latch <reach_bottom_1> in Unit <tp4> is equivalent to the following 2 FFs/Latches, which will be removed : <reach_bottom_2> <reach_bottom_3> 
+INFO:Xst:2261 - The FF/Latch <point_1> in Unit <tp4> is equivalent to the following 2 FFs/Latches, which will be removed : <point_2> <point_3> 
+INFO:Xst:2261 - The FF/Latch <reach_bottom_1> in Unit <tp5> is equivalent to the following 2 FFs/Latches, which will be removed : <reach_bottom_2> <reach_bottom_3> 
+INFO:Xst:2261 - The FF/Latch <point_1> in Unit <tp5> is equivalent to the following 2 FFs/Latches, which will be removed : <point_2> <point_3> 
+INFO:Xst:2261 - The FF/Latch <point_1> in Unit <tp6> is equivalent to the following 2 FFs/Latches, which will be removed : <point_2> <point_3> 
+INFO:Xst:2261 - The FF/Latch <reach_bottom_1> in Unit <tp6> is equivalent to the following 2 FFs/Latches, which will be removed : <reach_bottom_2> <reach_bottom_3> 
+INFO:Xst:2261 - The FF/Latch <reach_bottom_1> in Unit <tp7> is equivalent to the following 2 FFs/Latches, which will be removed : <reach_bottom_2> <reach_bottom_3> 
+INFO:Xst:2261 - The FF/Latch <point_1> in Unit <tp7> is equivalent to the following 2 FFs/Latches, which will be removed : <point_2> <point_3> 
+INFO:Xst:2261 - The FF/Latch <reach_bottom_1> in Unit <tp8> is equivalent to the following 2 FFs/Latches, which will be removed : <reach_bottom_2> <reach_bottom_3> 
+INFO:Xst:2261 - The FF/Latch <point_1> in Unit <tp8> is equivalent to the following 2 FFs/Latches, which will be removed : <point_2> <point_3> 
+INFO:Xst:2261 - The FF/Latch <reach_bottom_1> in Unit <tp9> is equivalent to the following 2 FFs/Latches, which will be removed : <reach_bottom_2> <reach_bottom_3> 
+INFO:Xst:2261 - The FF/Latch <point_1> in Unit <tp9> is equivalent to the following 2 FFs/Latches, which will be removed : <point_2> <point_3> 
+WARNING:Xst:1710 - FF/Latch <reach_bottom_1> (without init value) has a constant value of 0 in block <tp9>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <point_1> (without init value) has a constant value of 0 in block <tp9>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <reach_bottom_1> (without init value) has a constant value of 0 in block <tp8>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <point_1> (without init value) has a constant value of 0 in block <tp8>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <reach_bottom_1> (without init value) has a constant value of 0 in block <tp7>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <point_1> (without init value) has a constant value of 0 in block <tp7>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <reach_bottom_1> (without init value) has a constant value of 0 in block <tp6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <point_1> (without init value) has a constant value of 0 in block <tp6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <reach_bottom_1> (without init value) has a constant value of 0 in block <tp5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <point_1> (without init value) has a constant value of 0 in block <tp5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <reach_bottom_1> (without init value) has a constant value of 0 in block <tp4>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <point_1> (without init value) has a constant value of 0 in block <tp4>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <reach_bottom_1> (without init value) has a constant value of 0 in block <tp3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <point_1> (without init value) has a constant value of 0 in block <tp3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <reach_bottom_1> (without init value) has a constant value of 0 in block <tp2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <point_1> (without init value) has a constant value of 0 in block <tp2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <reach_bottom_1> (without init value) has a constant value of 0 in block <tp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <point_1> (without init value) has a constant value of 0 in block <tp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <reach_bottom_1> (without init value) has a constant value of 0 in block <tp0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <point_1> (without init value) has a constant value of 0 in block <tp0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2404 -  FFs/Latches <reach_bottom<3:1>> (without init value) have a constant value of 0 in block <TP>.
+WARNING:Xst:2404 -  FFs/Latches <point<3:1>> (without init value) have a constant value of 0 in block <TP>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# ROMs                                                 : 12
+ 32x32-bit ROM                                         : 2
+ 32x40-bit ROM                                         : 10
+# Multipliers                                          : 20
+ 10x8-bit multiplier                                   : 10
+ 11x18-bit multiplier                                  : 10
+# Adders/Subtractors                                   : 117
+ 10-bit adder                                          : 2
+ 10-bit adder carry out                                : 1
+ 10-bit addsub                                         : 1
+ 10-bit subtractor                                     : 21
+ 11-bit subtractor                                     : 11
+ 12-bit subtractor                                     : 41
+ 3-bit adder                                           : 12
+ 30-bit adder                                          : 10
+ 4-bit adder                                           : 18
+# Counters                                             : 32
+ 10-bit up counter                                     : 10
+ 20-bit up counter                                     : 20
+ 21-bit up counter                                     : 1
+ 32-bit up counter                                     : 1
+# Registers                                            : 77
+ Flip-Flops                                            : 77
+# Comparators                                          : 162
+ 10-bit comparator greatequal                          : 12
+ 10-bit comparator greater                             : 5
+ 10-bit comparator less                                : 15
+ 10-bit comparator lessequal                           : 23
+ 11-bit comparator greatequal                          : 1
+ 11-bit comparator less                                : 1
+ 12-bit comparator greatequal                          : 21
+ 12-bit comparator greater                             : 20
+ 12-bit comparator less                                : 21
+ 20-bit comparator greatequal                          : 10
+ 20-bit comparator lessequal                           : 10
+ 31-bit comparator greater                             : 10
+ 31-bit comparator lessequal                           : 10
+ 32-bit comparator greater                             : 1
+ 32-bit comparator less                                : 1
+ 32-bit comparator lessequal                           : 1
+# Multiplexers                                         : 3
+ 1-bit 4-to-1 multiplexer                              : 2
+ 32-bit 4-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <final> ...
+
+Optimizing unit <Rotation_direction> ...
+
+Optimizing unit <vga_sync> ...
+
+Optimizing unit <GP> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block final, actual ratio is 31.
+FlipFlop gp_x_0 has been replicated 1 time(s)
+FlipFlop gp_x_1 has been replicated 1 time(s)
+FlipFlop gp_x_2 has been replicated 1 time(s)
+FlipFlop gp_x_3 has been replicated 1 time(s)
+FlipFlop vs0/h_count_reg_0 has been replicated 1 time(s)
+FlipFlop vs0/h_count_reg_1 has been replicated 1 time(s)
+FlipFlop vs0/h_count_reg_2 has been replicated 1 time(s)
+FlipFlop vs0/h_count_reg_3 has been replicated 1 time(s)
+FlipFlop vs0/v_count_reg_0 has been replicated 1 time(s)
+FlipFlop vs0/v_count_reg_1 has been replicated 1 time(s)
+FlipFlop vs0/v_count_reg_2 has been replicated 1 time(s)
+FlipFlop vs0/v_count_reg_6 has been replicated 1 time(s)
+FlipFlop vs0/v_count_reg_7 has been replicated 1 time(s)
+FlipFlop vs0/v_count_reg_8 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 646
+ Flip-Flops                                            : 646
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : final.ngr
+Top Level Output File Name         : final
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 18
+
+Cell Usage :
+# BELS                             : 5776
+#      GND                         : 1
+#      INV                         : 281
+#      LUT1                        : 887
+#      LUT2                        : 645
+#      LUT2_D                      : 10
+#      LUT2_L                      : 19
+#      LUT3                        : 157
+#      LUT3_D                      : 2
+#      LUT3_L                      : 17
+#      LUT4                        : 484
+#      LUT4_D                      : 19
+#      LUT4_L                      : 71
+#      MUXCY                       : 1848
+#      MUXF5                       : 29
+#      VCC                         : 1
+#      XORCY                       : 1305
+# FlipFlops/Latches                : 646
+#      FD                          : 5
+#      FDE                         : 18
+#      FDR                         : 88
+#      FDRE                        : 530
+#      FDRS                        : 2
+#      FDS                         : 1
+#      FDSE                        : 2
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 17
+#      IBUF                        : 4
+#      OBUF                        : 13
+# MULTs                            : 18
+#      MULT18X18SIO                : 18
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                     1367  out of   4656    29%  
+ Number of Slice Flip Flops:            646  out of   9312     6%  
+ Number of 4 input LUTs:               2592  out of   9312    27%  
+ Number of IOs:                          18
+ Number of bonded IOBs:                  18  out of    232     7%  
+ Number of MULT18X18SIOs:                18  out of     20    90%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 646   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 15.205ns (Maximum Frequency: 65.768MHz)
+   Minimum input arrival time before clock: 5.579ns
+   Maximum output required time after clock: 11.528ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 15.205ns (frequency: 65.768MHz)
+  Total number of paths / destination ports: 97128 / 1617
+-------------------------------------------------------------------------
+Delay:               15.205ns (Levels of Logic = 13)
+  Source:            vs0/v_count_reg_0_1 (FF)
+  Destination:       rgb_reg_2 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: vs0/v_count_reg_0_1 to rgb_reg_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             18   0.591   1.147  vs0/v_count_reg_0_1 (vs0/v_count_reg_0_1)
+     LUT2:I1->O            1   0.704   0.000  tp2/Msub__COND_47_lut<0> (tp2/Msub__COND_47_lut<0>)
+     MUXCY:S->O            1   0.464   0.000  tp2/Msub__COND_47_cy<0> (tp2/Msub__COND_47_cy<0>)
+     XORCY:CI->O          13   0.804   1.062  tp2/Msub__COND_47_xor<1> (tp2/_COND_47<1>)
+     LUT2:I1->O            1   0.704   0.424  tp2/Mrom__rom0000211_SW0 (N124)
+     LUT4_L:I3->LO         1   0.704   0.104  tp2/rgb<2>27 (tp2/rgb<2>27)
+     LUT4:I3->O            1   0.704   0.424  tp2/rgb<2>48 (tp2/rgb<2>48)
+     LUT4:I3->O            1   0.704   0.455  tp2/rgb<2>172 (tp2/rgb<2>172)
+     LUT4:I2->O            1   0.704   0.424  tp2/rgb<2>839_SW0 (N65)
+     LUT4_D:I3->O          4   0.704   0.622  tp2/rgb<2>839 (rgb_tp2<2>)
+     LUT4_D:I2->LO         1   0.704   0.104  Madd_rgb_next_addsub0007R1 (N336)
+     LUT4:I3->O            1   0.704   0.424  Madd_rgb_next_addsub0011_Madd_lut<2>72 (Madd_rgb_next_addsub0011_Madd_lut<2>72)
+     LUT4_L:I3->LO         1   0.704   0.104  Madd_rgb_next_addsub0011_Madd_lut<2>79_SW0_SW0 (N158)
+     LUT4:I3->O            1   0.704   0.000  rgb_next<2>1 (rgb_next<2>)
+     FDE:D                     0.308          rgb_reg_2
+    ----------------------------------------
+    Total                     15.205ns (9.911ns logic, 5.294ns route)
+                                       (65.2% logic, 34.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 638 / 638
+-------------------------------------------------------------------------
+Offset:              5.579ns (Levels of Logic = 2)
+  Source:            reset (PAD)
+  Destination:       gp0/clk_count_31 (FF)
+  Destination Clock: clk rising
+
+  Data Path: reset to gp0/clk_count_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           180   1.218   1.484  reset_IBUF (reset_IBUF)
+     LUT2:I0->O           32   0.704   1.262  gp0/clk_count_or00001 (gp0/clk_count_or0000)
+     FDR:R                     0.911          gp0/clk_count_0
+    ----------------------------------------
+    Total                      5.579ns (2.833ns logic, 2.746ns route)
+                                       (50.8% logic, 49.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 206 / 9
+-------------------------------------------------------------------------
+Offset:              11.528ns (Levels of Logic = 7)
+  Source:            tp0/point (FF)
+  Destination:       led<3> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: tp0/point to led<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             6   0.591   0.844  tp0/point (tp0/point)
+     LUT4:I0->O            2   0.704   0.622  Madd_score_reg_addsub0003_Madd_lut<0>1 (Madd_score_reg_addsub0003_Madd_lut<0>)
+     LUT3:I0->O            3   0.704   0.706  Madd_score_reg_addsub0005_Madd_lut<0>1 (Madd_score_reg_addsub0005_Madd_lut<0>)
+     LUT4:I0->O            1   0.704   0.000  Madd_score_reg_lut<0>11 (Madd_score_reg_lut<0>1)
+     MUXF5:I1->O           3   0.321   0.610  Madd_score_reg_lut<0>1_f5 (led_0_OBUF)
+     LUT4:I1->O            2   0.704   0.622  Madd_score_reg_xor<2>111 (N19)
+     LUT4:I0->O            1   0.704   0.420  Madd_score_reg_xor<3>11 (led_3_OBUF)
+     OBUF:I->O                 3.272          led_3_OBUF (led<3>)
+    ----------------------------------------
+    Total                     11.528ns (7.704ns logic, 3.824ns route)
+                                       (66.8% logic, 33.2% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 21.00 secs
+Total CPU time to Xst completion: 21.56 secs
+ 
+--> 
+
+Total memory usage is 332904 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   66 (   0 filtered)
+Number of infos    :   21 (   0 filtered)
+
